@@ -1,0 +1,6 @@
+.Card{
+    width:800px;
+}
+.Card > img{
+    width:800px;
+}
