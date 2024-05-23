@@ -1,9 +1,11 @@
 import React from "react";
 import { Card } from "flowbite-react";
 import "../Css/Home.css";
+import Header from "../Components/Header";
 export default function Home() {
   return (
-    <div className="flex flex-col gap-5 mt-5">
+    <div className="flex flex-col gap-5">
+      <Header/>
       <Card
         className="Card mx-auto"
         imgSrc="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
@@ -12,7 +14,7 @@ export default function Home() {
           <div className="userInfo flex  gap-2">
             <img
               src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg"
-              className="rounded-full border-slate-500 border-2 h-10 w-10"
+              className="rounded-full border-slate-500 border-2 h-50 w-10"
             />
             <div className="mt-2 flex gap-2">
 

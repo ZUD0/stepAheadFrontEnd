@@ -1,16 +1,26 @@
 import "./App.css";
-import Header from "./Components/Header";
+import Dashboard from "./Pages/Dashboard";
+import PrivateRoute from "./Components/PrivateRoute";
+import PublicRoute from "./Components/PublicRoute";
+
 import Home from "./Pages/Home";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App ">
-      <Header/>
-      {/* <Home /> */}
-      <SignUp/>
-      {/* <SignIn/> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<PrivateRoute />}>
+          <Route path="/home" element={<Home />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
+        <Route element={<PublicRoute />}>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
